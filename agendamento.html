@@ -1,23 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0a0a0c" />
 <title>Agendamento | Tommixbarber</title>
 <style>
-:root{--bg:#0a0a0c;--card:#141418;--text:#f5f3ee;--muted:#aaa7a1;--gold:#c99b4a;--gold2:#f0c36e;--line:rgba(255,255,255,.1)}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#241b0e,#0a0a0c 38%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}.wrap{width:min(760px,92%);margin:auto;padding:36px 0 60px}.top{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:34px}.brand{font-size:1.25rem;font-weight:900}.brand span{color:var(--gold2)}a{color:inherit;text-decoration:none}.back{color:#d7d3cc}.card{background:rgba(20,20,24,.95);border:1px solid var(--line);border-radius:24px;padding:30px;box-shadow:0 18px 50px rgba(0,0,0,.25)}.tag{display:inline-block;color:var(--gold2);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:800}h1{font-size:clamp(2.2rem,7vw,4rem);line-height:1;margin:10px 0 12px;letter-spacing:-.04em}p{color:var(--muted)}form{display:grid;gap:18px;margin-top:30px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:grid;gap:7px;font-size:.9rem;font-weight:750}input,select{width:100%;border:1px solid var(--line);background:#0e0e12;color:var(--text);border-radius:12px;padding:14px;font:inherit;outline:none}input:focus,select:focus{border-color:var(--gold)}button{border:0;border-radius:13px;padding:15px 20px;font:inherit;font-weight:900;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109;cursor:pointer}.note{font-size:.86rem;color:var(--muted);margin-top:16px}.status{min-height:1.5em;font-size:.9rem;color:#f0c36e}@media(max-width:620px){.grid{grid-template-columns:1fr}.card{padding:22px}.top{align-items:flex-start;flex-direction:column}}</style>
+:root{--bg:#09090b;--panel:#121216;--panel2:#18181d;--text:#f7f3ec;--muted:#aaa7a1;--gold:#c99b4a;--gold2:#f0c36e;--line:rgba(255,255,255,.10);--ok:#39c46a}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0,#231a0e 0,#0a0a0c 34%,#09090b 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100vh}a{color:inherit;text-decoration:none}.wrap{width:min(980px,92%);margin:auto;padding:28px 0 56px}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:26px}.brand{font-size:1.3rem;font-weight:900}.brand span{color:var(--gold2)}.back{color:#d9d3c8}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}.card{background:rgba(18,18,22,.96);border:1px solid var(--line);border-radius:24px;padding:28px}.tag{display:inline-flex;padding:7px 11px;border-radius:999px;background:#21180d;border:1px solid #5a4524;color:var(--gold2);font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase}h1{font-size:clamp(2.35rem,6vw,4.4rem);line-height:.98;margin:14px 0 12px;letter-spacing:-.05em}p{color:var(--muted);margin:0}.section-title{font-size:1rem;font-weight:900;margin:22px 0 10px}.services,.times{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.choice{border:1px solid var(--line);background:#0d0d11;color:var(--text);padding:13px 14px;border-radius:13px;text-align:left;font-weight:800;cursor:pointer}.choice small{display:block;color:var(--muted);font-weight:500;margin-top:2px}.choice.active{border-color:var(--gold);background:#21180d;color:#ffe0a8}.date-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.date-btn{border:1px solid var(--line);background:#0d0d11;color:var(--text);padding:12px 8px;border-radius:13px;text-align:center;cursor:pointer}.date-btn b{display:block;font-size:1rem}.date-btn span{display:block;color:var(--muted);font-size:.8rem}.date-btn.active{border-color:var(--gold);background:#21180d}.field{margin-top:14px}label{display:block;font-size:.88rem;font-weight:800;margin-bottom:7px}input{width:100%;border:1px solid var(--line);background:#0d0d11;color:var(--text);border-radius:12px;padding:14px;font:inherit;outline:none}input:focus{border-color:var(--gold)}.summary{display:grid;gap:12px}.summary-box{background:linear-gradient(145deg,#19150f,#101014);border:1px solid rgba(201,155,74,.24);border-radius:18px;padding:18px}.line{display:flex;justify-content:space-between;gap:18px;padding:9px 0;border-bottom:1px solid var(--line)}.line:last-child{border-bottom:0}.line span{color:var(--muted)}.line strong{text-align:right}.note{font-size:.86rem;color:var(--muted);margin-top:12px}.send{width:100%;margin-top:18px;border:0;border-radius:14px;padding:16px 20px;background:linear-gradient(135deg,var(--gold2),var(--gold));color:#171109;font:inherit;font-weight:950;cursor:pointer}.send:disabled{opacity:.45;cursor:not-allowed}.status{min-height:22px;margin-top:10px;color:var(--gold2);font-size:.9rem}.custom-date{margin-top:10px}.custom-date input{color-scheme:dark}@media(max-width:780px){.hero{grid-template-columns:1fr}.date-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.services,.times{grid-template-columns:1fr}.card{padding:20px}.top{align-items:flex-start;flex-direction:column}.date-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
 </head>
-<body><div class="wrap">
-<div class="top"><a class="brand" href="index.html">Tommix<span>barber</span></a><a class="back" href="index.html">← Voltar ao site</a></div>
-<div class="card"><div class="tag">Agendamento</div><h1>Escolha seu horário.</h1><p>Preencha os dados abaixo. Ao continuar, o WhatsApp da Tommixbarber será aberto com a solicitação pronta para confirmação.</p>
-<form id="booking">
-<div class="grid"><label>Seu nome<input id="name" type="text" required placeholder="Como podemos te chamar?"></label><label>Serviço<select id="service" required><option value="">Selecione</option><option>Corte</option><option>Barba</option><option>Corte + barba</option><option>Corte infantil</option><option>Outro serviço</option></select></label></div>
-<div class="grid"><label>Data<input id="date" type="date" required></label><label>Horário<input id="time" type="time" required min="08:00" max="20:00"></label></div>
-<label>Observação (opcional)<input id="notes" type="text" placeholder="Ex.: preferência de corte"></label>
-<div class="status" id="status" aria-live="polite"></div><button type="submit">Solicitar horário pelo WhatsApp</button>
-</form><div class="note">O horário só fica confirmado após a resposta da barbearia no WhatsApp. Telefone: (73) 98868-1704.</div></div>
+<body>
+<div class="wrap">
+  <div class="top"><a class="brand" href="index.html">Tommix<span>barber</span></a><a class="back" href="index.html">← Voltar ao site</a></div>
+  <div class="hero">
+    <section class="card">
+      <span class="tag">Agendamento</span>
+      <h1>Escolha seu melhor horário.</h1>
+      <p>Selecione serviço, data e horário. No final, abrimos o WhatsApp com tudo pronto para confirmação.</p>
+
+      <div class="section-title">1. Serviço</div>
+      <div class="services" id="services">
+        <button class="choice" data-value="Corte">✂️ Corte<small>Corte masculino</small></button>
+        <button class="choice" data-value="Barba">🧔 Barba<small>Acabamento e alinhamento</small></button>
+        <button class="choice" data-value="Corte + barba">💈 Corte + barba<small>Pacote completo</small></button>
+        <button class="choice" data-value="Corte infantil">👦 Corte infantil<small>Atendimento para crianças</small></button>
+      </div>
+
+      <div class="section-title">2. Data</div>
+      <div class="date-grid" id="dates"></div>
+      <div class="custom-date"><label for="customDate">Ou escolha outra data</label><input id="customDate" type="date" /></div>
+
+      <div class="section-title">3. Horário</div>
+      <div class="times" id="times"></div>
+
+      <div class="field"><label for="name">Seu nome</label><input id="name" type="text" placeholder="Digite seu nome" /></div>
+      <div class="field"><label for="notes">Observação (opcional)</label><input id="notes" type="text" placeholder="Ex.: prefiro corte baixo nas laterais" /></div>
+    </section>
+
+    <aside class="card summary">
+      <div><span class="tag">Resumo</span><h2 style="margin:12px 0 6px">Seu agendamento</h2><p>Confira antes de enviar.</p></div>
+      <div class="summary-box">
+        <div class="line"><span>Serviço</span><strong id="sumService">Não selecionado</strong></div>
+        <div class="line"><span>Data</span><strong id="sumDate">Não selecionada</strong></div>
+        <div class="line"><span>Horário</span><strong id="sumTime">Não selecionado</strong></div>
+        <div class="line"><span>Local</span><strong>Tommixbarber<br>Jaguaquara - BA</strong></div>
+      </div>
+      <button class="send" id="send" disabled>Confirmar pelo WhatsApp</button>
+      <div class="status" id="status" aria-live="polite"></div>
+      <div class="note">O horário só fica confirmado depois que a barbearia responder no WhatsApp. Telefone: (73) 98868-1704.</div>
+    </aside>
+  </div>
 </div>
 <script>
-const form=document.getElementById('booking'),date=document.getElementById('date'),status=document.getElementById('status');
-const today=new Date(); const y=today.getFullYear(),m=String(today.getMonth()+1).padStart(2,'0'),d=String(today.getDate()).padStart(2,'0'); date.min=`${y}-${m}-${d}`;
-form.addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('name').value.trim(),service=document.getElementById('service').value,day=date.value,time=document.getElementById('time').value,notes=document.getElementById('notes').value.trim();if(!name||!service||!day||!time){status.textContent='Preencha nome, serviço, data e horário.';return}const [yy,mm,dd]=day.split('-');const pretty=`${dd}/${mm}/${yy}`;const msg=`Olá, Tommixbarber! Gostaria de solicitar um agendamento.%0A%0A👤 Nome: ${encodeURIComponent(name)}%0A✂️ Serviço: ${encodeURIComponent(service)}%0A📅 Data: ${encodeURIComponent(pretty)}%0A🕒 Horário: ${encodeURIComponent(time)}${notes?`%0A📝 Observação: ${encodeURIComponent(notes)}`:''}%0A%0APode confirmar a disponibilidade?`;window.open(`https://wa.me/5573988681704?text=${msg}`,'_blank','noopener');status.textContent='Abrindo o WhatsApp para confirmar o horário…';});
-</script></body></html>
+const services=document.querySelectorAll('#services .choice'),dates=document.getElementById('dates'),times=document.getElementById('times'),customDate=document.getElementById('customDate'),send=document.getElementById('send'),status=document.getElementById('status');
+const sumService=document.getElementById('sumService'),sumDate=document.getElementById('sumDate'),sumTime=document.getElementById('sumTime');
+let selectedService='',selectedDate='',selectedTime='';
+const pad=n=>String(n).padStart(2,'0');
+const iso=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const pretty=s=>{if(!s)return'';const [y,m,d]=s.split('-');return`${d}/${m}/${y}`};
+function refresh(){sumService.textContent=selectedService||'Não selecionado';sumDate.textContent=selectedDate?pretty(selectedDate):'Não selecionada';sumTime.textContent=selectedTime||'Não selecionado';send.disabled=!(selectedService&&selectedDate&&selectedTime&&document.getElementById('name').value.trim())}
+services.forEach(b=>b.addEventListener('click',()=>{services.forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedService=b.dataset.value;refresh()}));
+const today=new Date();today.setHours(0,0,0,0);customDate.min=iso(today);
+for(let i=0;i<8;i++){const d=new Date(today);d.setDate(d.getDate()+i);const b=document.createElement('button');b.className='date-btn';b.type='button';b.dataset.value=iso(d);b.innerHTML=`<b>${i===0?'Hoje':i===1?'Amanhã':d.toLocaleDateString('pt-BR',{weekday:'short'})}</b><span>${pad(d.getDate())}/${pad(d.getMonth()+1)}</span>`;b.addEventListener('click',()=>{document.querySelectorAll('.date-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedDate=b.dataset.value;customDate.value='';refresh()});dates.appendChild(b)}
+customDate.addEventListener('change',()=>{document.querySelectorAll('.date-btn').forEach(x=>x.classList.remove('active'));selectedDate=customDate.value;refresh()});
+['08:00','09:00','10:00','11:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00'].forEach(t=>{const b=document.createElement('button');b.className='choice';b.type='button';b.dataset.value=t;b.textContent=t;b.addEventListener('click',()=>{times.querySelectorAll('.choice').forEach(x=>x.classList.remove('active'));b.classList.add('active');selectedTime=t;refresh()});times.appendChild(b)});
+document.getElementById('name').addEventListener('input',refresh);
+send.addEventListener('click',()=>{const name=document.getElementById('name').value.trim(),notes=document.getElementById('notes').value.trim();if(!name||!selectedService||!selectedDate||!selectedTime){status.textContent='Complete os dados do agendamento.';return}const msg=`Olá, Tommixbarber! Gostaria de solicitar um agendamento.\n\n👤 Nome: ${name}\n✂️ Serviço: ${selectedService}\n📅 Data: ${pretty(selectedDate)}\n🕒 Horário: ${selectedTime}${notes?`\n📝 Observação: ${notes}`:''}\n\nPode confirmar a disponibilidade?`;window.open(`https://wa.me/5573988681704?text=${encodeURIComponent(msg)}`,'_blank','noopener');status.textContent='Abrindo o WhatsApp para confirmar…'});
+refresh();
+</script>
+</body>
+</html>
